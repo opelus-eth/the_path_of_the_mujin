@@ -16,6 +16,12 @@
  */
 
 // ─────────────────────────────────────────────────────────────
+//  SUPABASE CONFIG  –  vyplň po vytvoření projektu na supabase.com
+// ─────────────────────────────────────────────────────────────
+const SUPABASE_URL      = 'https://TVOJE_ID.supabase.co';
+const SUPABASE_ANON_KEY = 'TVUJ_ANON_KEY';
+
+// ─────────────────────────────────────────────────────────────
 //  WORLD & PLAYER CONSTANTS
 // ─────────────────────────────────────────────────────────────
 const TILE        = 32;    // base tile size in pixels
@@ -1572,8 +1578,18 @@ class WinScene extends Phaser.Scene {
   }
 
   // ── Načte aktuální top 10 ──────────────────────────────────
+  _sbHeaders() {
+    return {
+      'apikey':        SUPABASE_ANON_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+      'Content-Type':  'application/json'
+    };
+  }
+
   _fetchLeaderboard() {
-    fetch('/api/leaderboard')
+    fetch(`${SUPABASE_URL}/rest/v1/scores?select=name,score&order=score.desc&limit=10`, {
+      headers: this._sbHeaders()
+    })
       .then(r => r.json())
       .then(top10 => this._renderLeaderboard(top10, null, null))
       .catch(() => {});
@@ -1593,23 +1609,32 @@ class WinScene extends Phaser.Scene {
     this.submitted = true;
     this.submitBtn.setText('Submitting...').disableInteractive();
 
-    fetch('/api/score', {
+    const entry = { name: String(name).trim().slice(0, 20), score: Math.floor(this.finalScore) };
+
+    // 1. vlož skóre
+    fetch(`${SUPABASE_URL}/rest/v1/scores`, {
       method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ name, score: this.finalScore })
+      headers: this._sbHeaders(),
+      body:    JSON.stringify(entry)
     })
-      .then(r => r.json())
-      .then(data => {
-        this._renderLeaderboard(data.top10, data.rank, { name, score: this.finalScore });
-        const ov = document.getElementById('win-input-overlay');
-        if (ov) ov.style.display = 'none';
-        this.submitBtn.setVisible(false);
-        this.restartBtn.setVisible(true);
-      })
-      .catch(() => {
-        this.submitBtn.setText('[ Connection error ]').setInteractive({ useHandCursor: true });
-        this.submitted = false;
-      });
+    // 2. načti top 10
+    .then(() => fetch(`${SUPABASE_URL}/rest/v1/scores?select=name,score&order=score.desc&limit=10`, {
+      headers: this._sbHeaders()
+    }))
+    .then(r => r.json())
+    .then(top10 => {
+      // rank = počet skóre >= moje skóre (včetně)
+      const rank = top10.filter(e => e.score >= entry.score).length || 1;
+      this._renderLeaderboard(top10, rank, entry);
+      const ov = document.getElementById('win-input-overlay');
+      if (ov) ov.style.display = 'none';
+      this.submitBtn.setVisible(false);
+      this.restartBtn.setVisible(true);
+    })
+    .catch(() => {
+      this.submitBtn.setText('[ Connection error ]').setInteractive({ useHandCursor: true });
+      this.submitted = false;
+    });
   }
 
   shutdown() {
