@@ -18,8 +18,8 @@
 // ─────────────────────────────────────────────────────────────
 //  SUPABASE CONFIG  –  vyplň po vytvoření projektu na supabase.com
 // ─────────────────────────────────────────────────────────────
-const SUPABASE_URL      = 'https://TVOJE_ID.supabase.co';
-const SUPABASE_ANON_KEY = 'TVUJ_ANON_KEY';
+const SUPABASE_URL      = 'https://qtknrcqccdtfetquavtx.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_AEFkZ-UQ9StkZW2zH-nOFA_Sz4AcGlS';
 
 // ─────────────────────────────────────────────────────────────
 //  WORLD & PLAYER CONSTANTS
