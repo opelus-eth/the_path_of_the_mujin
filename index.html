@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Bosu – The Path of the Mujin</title>
+  <!-- Orbitron: closest free match to Akira Expanded (Final Bosu brand font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=block" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #1a1a2e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      image-rendering: pixelated; /* zachová ostrý pixel-art look */
+    }
+    #win-input-overlay {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+    }
+    #win-input-overlay input {
+      width: 210px;
+      padding: 6px 12px;
+      background: #141428;
+      color: #fff;
+      border: 2px solid #4455cc;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: monospace;
+      outline: none;
+    }
+    #win-input-overlay input:focus {
+      border-color: #7788ff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Name input overlay for WinScene -->
+  <div id="win-input-overlay">
+    <input id="winName" type="text" maxlength="20" placeholder="Enter your name..." autocomplete="off" />
+  </div>
+  <!-- Phaser 3 z CDN – pro offline použití stáhni a ulož jako assets/phaser.min.js -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+  <script src="game.js?v=16"></script>
+</body>
+</html>
