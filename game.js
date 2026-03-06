@@ -60,7 +60,7 @@ const LEVEL_CONFIGS = [
   // ══════════════════════════════════════════════════════════
   {
     startBg:   { key: 'washing-machine', srcW: 768,  srcH: 715,  displayH: 256 },
-    endObj:    { key: 'train',           srcW: 1024, srcH: 850,  displayH: 128, flipX: true },
+    endObj:    { key: 'train',           srcW: 1024, srcH: 850,  displayH: 192, flipX: true, angle: -12 },
     unlockMsg: 'Path unlocked!',
 
     gaps: [
@@ -88,7 +88,6 @@ const LEVEL_CONFIGS = [
       [2660, _H-_T*3, 3, 'platform'],
       [2820, _H-_T*6, 2, 'brick'],
       [2940, _H-_T*4, 3, 'platform'],
-      [3170, _H-_T*3, 6, 'platform'],
     ],
 
     enemies: [
@@ -97,7 +96,7 @@ const LEVEL_CONFIGS = [
       [800,  _H-_T*5], [960,  _H-_T*7], [1090, _H-_T*5],
       [1450, _H-_T*4], [1585, _H-_T*8], [1715, _H-_T*6],
       [2040, _H-_T*5], [2215, _H-_T*7], [2355, _H-_T*9],
-      [2675, _H-_T*4], [2835, _H-_T*7], [3185, _H-_T*4],
+      [2675, _H-_T*4], [2835, _H-_T*7],
     ],
 
     fragments: [
@@ -118,7 +117,6 @@ const LEVEL_CONFIGS = [
       [2036, _H-_T*6], [2068, _H-_T*6],
       [2216, _H-_T*8],
       [2676, _H-_T*5],
-      [3186, _H-_T*5], [3218, _H-_T*5], [3250, _H-_T*5],
     ],
   },
 
@@ -127,8 +125,8 @@ const LEVEL_CONFIGS = [
   //  Wider gaps, narrower platforms, more enemies
   // ══════════════════════════════════════════════════════════
   {
-    startBg:   { key: 'train', srcW: 1024, srcH: 850,  displayH: 256 },
-    endObj:    { key: 'exit',  srcW: 634,  srcH: 903,  displayH: 96  },
+    startBg:   { key: 'train', srcW: 1024, srcH: 850,  displayH: 192, angle: -12 },
+    endObj:    { key: 'exit',  srcW: 634,  srcH: 903,  displayH: 256 },
     unlockMsg: 'Path unlocked!',
 
     gaps: [
@@ -156,7 +154,6 @@ const LEVEL_CONFIGS = [
       [2700, _H-_T*4, 2, 'platform'],
       [2840, _H-_T*7, 2, 'brick'],
       [2960, _H-_T*5, 2, 'platform'],
-      [3180, _H-_T*3, 5, 'platform'],
     ],
 
     enemies: [
@@ -165,7 +162,7 @@ const LEVEL_CONFIGS = [
       [800,  _H-_T*6], [955,  _H-_T*8], [1085, _H-_T*6],
       [1470, _H-_T*5], [1615, _H-_T*9], [1740, _H-_T*6],
       [2070, _H-_T*6], [2225, _H-_T*8], [2365, _H-_T*10],
-      [2710, _H-_T*5], [2855, _H-_T*8], [3192, _H-_T*4],
+      [2710, _H-_T*5], [2855, _H-_T*8],
     ],
 
     fragments: [
@@ -187,7 +184,6 @@ const LEVEL_CONFIGS = [
       [2076, _H-_T*6], [2108, _H-_T*6],
       [2226, _H-_T*10],
       [2716, _H-_T*5],
-      [3196, _H-_T*4], [3228, _H-_T*4],
     ],
   },
 
@@ -197,7 +193,7 @@ const LEVEL_CONFIGS = [
   // ══════════════════════════════════════════════════════════
   {
     startBg:   { key: 'exit',      srcW: 634, srcH: 903,  displayH: 256 },
-    endObj:    { key: 'finalbosu', srcW: 942, srcH: 696,  displayH: 128 },
+    endObj:    { key: 'finalbosu', srcW: 942, srcH: 696,  displayH: 360 },
     unlockMsg: 'Path unlocked!\nFinal Bosu is coming!',
 
     gaps: [
@@ -210,7 +206,7 @@ const LEVEL_CONFIGS = [
     platforms: [
       // Sec 1
       [240,  _H-_T*7, 2, 'platform'],
-      [375,  _H-_T*5, 2, 'platform'],
+      [375,  _H-_T*5, 3, 'platform'],
       // Sec 2
       [800,  _H-_T*6, 2, 'platform'],
       [920,  _H-_T*8, 2, 'platform'],
@@ -230,7 +226,6 @@ const LEVEL_CONFIGS = [
       [2752, _H-_T*5, 2, 'platform'],
       [2880, _H-_T*8, 2, 'brick'],
       [3000, _H-_T*5, 2, 'platform'],
-      [3184, _H-_T*3, 4, 'platform'],
     ],
 
     enemies: [
@@ -240,7 +235,7 @@ const LEVEL_CONFIGS = [
       [1060, _H-_T*6], [1200, _H-_T*4],
       [1500, _H-_T*6], [1620, _H-_T*10], [1745, _H-_T*7],
       [2117, _H-_T*6], [2245, _H-_T*9],  [2373, _H-_T*11],
-      [2757, _H-_T*6], [2885, _H-_T*9],  [3189, _H-_T*4],
+      [2757, _H-_T*6], [2885, _H-_T*9],
     ],
 
     fragments: [
@@ -262,7 +257,6 @@ const LEVEL_CONFIGS = [
       [2128, _H-_T*6],
       [2256, _H-_T*9],
       [2768, _H-_T*6],
-      [3200, _H-_T*4], [3232, _H-_T*4],
     ],
   },
 
@@ -931,9 +925,11 @@ class GameScene extends Phaser.Scene {
     // [START BACKGROUND] – image flush-left, anchored to bottom-left.
     // Source dimensions from cfg keep aspect ratio correct.
     const sb = this.cfg.startBg;
-    this.add.image(0, GAME_H, sb.key)
+    const sbImg = this.add.image(0, GAME_H, sb.key)
       .setOrigin(0, 1)
       .setDisplaySize(Math.round(sb.srcW * (sb.displayH / sb.srcH)), sb.displayH);
+    if (sb.angle) sbImg.setAngle(sb.angle);
+    if (sb.flipX) sbImg.setFlipX(true);
 
     this.platforms = this.physics.add.staticGroup();
     this.buildLevel();
@@ -972,7 +968,9 @@ class GameScene extends Phaser.Scene {
 
     // [EXIT GRAPHICS] – image taken from cfg.endObj for this level
     const eo = this.cfg.endObj;
-    this.exitDoor = this.physics.add.staticSprite(WORLD_W - 80, GAME_H - TILE * 3, eo.key);
+    // Y: place sprite so its bottom rests on the ground surface (GAME_H - TILE)
+    const exitDoorY = GAME_H - TILE - eo.displayH / 2;
+    this.exitDoor = this.physics.add.staticSprite(WORLD_W - 80, exitDoorY, eo.key);
     this.exitDoor.setDisplaySize(
       Math.round(eo.srcW * (eo.displayH / eo.srcH)),
       eo.displayH
@@ -1078,8 +1076,8 @@ class GameScene extends Phaser.Scene {
       e.setVelocityX(70);
       e.patrolDir    = 1;
       e.lastFlipTime = 0;
-      e.body.setSize(28 / e.scaleX, 58 / e.scaleY);
-      e.body.setOffset(12, 6);
+      e.body.setSize(44 / e.scaleX, 58 / e.scaleY);
+      e.body.setOffset((617 - 44 / e.scaleX) / 2, 6);
       e.anims.play('e_walk');
     });
   }
