@@ -483,6 +483,12 @@ class BootScene extends Phaser.Scene {
     // Drop assets/logo.png (the Final Bosu logo) to show it on the title screen.
     // If the file is missing the title screen falls back to styled text.
     this.load.image('logo', 'assets/logo.png');
+
+    // [AUDIO] ─────────────────────────────────────────────────
+    this.load.audio('music',       'assets/main_loop.ogg');
+    this.load.audio('sfx_jump',    'assets/jump.wav');
+    this.load.audio('sfx_coin',    'assets/coin.wav');
+    this.load.audio('sfx_clear',   'assets/level_clear.wav');
   }
 
   create() {
@@ -913,6 +919,11 @@ class GameScene extends Phaser.Scene {
   }
 
   create() {
+    // Background music – loop forever, respect system mute
+    if (!this.sound.get('music')) {
+      this.sound.play('music', { loop: true, volume: 0.5 });
+    }
+
     this.physics.world.setBounds(0, 0, WORLD_W, GAME_H);
     // Disable bottom-wall collision so the player falls into pits.
     // Left/right walls are still active (player can't scroll off-screen).
@@ -1138,6 +1149,7 @@ class GameScene extends Phaser.Scene {
     if (jumpKey && onGround && !this.jumpKeyDown) {
       p.setVelocityY(JUMP_VEL);
       this.jumpKeyDown = true;
+      this.sound.play('sfx_jump', { volume: 0.6 });
     }
     if (!jumpKey) { this.jumpKeyDown = false; }
 
@@ -1228,6 +1240,7 @@ class GameScene extends Phaser.Scene {
     coin.destroy();
     this.score += 100;
     this.showFloatingText(coin.x, coin.y, '+100', 0xFFD700);
+    this.sound.play('sfx_coin', { volume: 0.7 });
   }
 
   collectFragment(player, fragment) {
@@ -1279,6 +1292,8 @@ class GameScene extends Phaser.Scene {
     player.setVelocity(0, 0);
     player.body.enable = false;
     this.cameras.main.flash(500, 255, 255, 100);
+    this.sound.stopByKey('music');
+    this.sound.play('sfx_clear', { volume: 0.8 });
 
     const nextLevel = this.currentLevel + 1;
     if (nextLevel >= LEVEL_CONFIGS.length) {
