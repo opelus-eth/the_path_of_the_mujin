@@ -60,7 +60,7 @@ const LEVEL_CONFIGS = [
   // ══════════════════════════════════════════════════════════
   {
     startBg:   { key: 'washing-machine', srcW: 768,  srcH: 715,  displayH: 256 },
-    endObj:    { key: 'train',           srcW: 1024, srcH: 850,  displayH: 192, flipX: true, angle: -20 },
+    endObj:    { key: 'train',           srcW: 1024, srcH: 850,  displayH: 192, flipX: true },
     unlockMsg: 'Path unlocked!',
 
     gaps: [
@@ -71,22 +71,22 @@ const LEVEL_CONFIGS = [
     ],
 
     platforms: [
-      [300,  _H-_T*5, 2, 'platform'],
+      [300,  _H-_T*5, 3, 'platform'],
       [450,  _H-_T*3, 4, 'platform'],
       [780,  _H-_T*4, 3, 'platform'],
-      [950,  _H-_T*6, 2, 'platform'],
+      [950,  _H-_T*6, 3, 'platform'],
       [1080, _H-_T*4, 3, 'brick'],
       [1200, _H-_T*3, 3, 'platform'],
       [1420, _H-_T*3, 4, 'platform'],
-      [1570, _H-_T*7, 2, 'platform'],
+      [1570, _H-_T*7, 3, 'platform'],
       [1700, _H-_T*5, 3, 'brick'],
       [1820, _H-_T*3, 3, 'platform'],
       [2020, _H-_T*4, 3, 'platform'],
-      [2200, _H-_T*6, 2, 'platform'],
-      [2340, _H-_T*8, 2, 'brick'],
+      [2200, _H-_T*6, 3, 'platform'],
+      [2340, _H-_T*8, 3, 'brick'],
       [2460, _H-_T*5, 3, 'platform'],
       [2660, _H-_T*3, 3, 'platform'],
-      [2820, _H-_T*6, 2, 'brick'],
+      [2820, _H-_T*6, 3, 'brick'],
       [2940, _H-_T*4, 3, 'platform'],
     ],
 
@@ -125,7 +125,7 @@ const LEVEL_CONFIGS = [
   //  Wider gaps, narrower platforms, more enemies
   // ══════════════════════════════════════════════════════════
   {
-    startBg:   { key: 'train', srcW: 1024, srcH: 850,  displayH: 192, angle: -20 },
+    startBg:   { key: 'train', srcW: 1024, srcH: 850,  displayH: 192 },
     endObj:    { key: 'exit',  srcW: 634,  srcH: 903,  displayH: 256 },
     unlockMsg: 'Path unlocked!',
 
@@ -137,23 +137,23 @@ const LEVEL_CONFIGS = [
     ],
 
     platforms: [
-      [280,  _H-_T*6, 2, 'platform'],
+      [280,  _H-_T*6, 3, 'platform'],
       [440,  _H-_T*4, 3, 'platform'],
-      [790,  _H-_T*5, 2, 'platform'],
-      [940,  _H-_T*7, 2, 'platform'],
-      [1075, _H-_T*5, 2, 'brick'],
+      [790,  _H-_T*5, 3, 'platform'],
+      [940,  _H-_T*7, 3, 'platform'],
+      [1075, _H-_T*5, 3, 'brick'],
       [1210, _H-_T*3, 3, 'platform'],
       [1460, _H-_T*4, 3, 'platform'],
-      [1600, _H-_T*8, 2, 'platform'],
-      [1730, _H-_T*5, 2, 'brick'],
+      [1600, _H-_T*8, 3, 'platform'],
+      [1730, _H-_T*5, 3, 'brick'],
       [1840, _H-_T*3, 3, 'platform'],
-      [2060, _H-_T*5, 2, 'platform'],
-      [2210, _H-_T*7, 2, 'platform'],
-      [2350, _H-_T*9, 2, 'brick'],
-      [2470, _H-_T*5, 2, 'platform'],
-      [2700, _H-_T*4, 2, 'platform'],
-      [2840, _H-_T*7, 2, 'brick'],
-      [2960, _H-_T*5, 2, 'platform'],
+      [2060, _H-_T*5, 3, 'platform'],
+      [2210, _H-_T*7, 3, 'platform'],
+      [2350, _H-_T*9, 3, 'brick'],
+      [2470, _H-_T*5, 3, 'platform'],
+      [2700, _H-_T*4, 3, 'platform'],
+      [2840, _H-_T*7, 3, 'brick'],
+      [2960, _H-_T*5, 3, 'platform'],
     ],
 
     enemies: [
@@ -205,27 +205,27 @@ const LEVEL_CONFIGS = [
 
     platforms: [
       // Sec 1
-      [240,  _H-_T*7, 2, 'platform'],
+      [240,  _H-_T*7, 3, 'platform'],
       [375,  _H-_T*5, 3, 'platform'],
       // Sec 2
-      [800,  _H-_T*6, 2, 'platform'],
-      [920,  _H-_T*8, 2, 'platform'],
-      [1055, _H-_T*5, 2, 'brick'],
-      [1195, _H-_T*3, 2, 'platform'],
+      [800,  _H-_T*6, 3, 'platform'],
+      [920,  _H-_T*8, 3, 'platform'],
+      [1055, _H-_T*5, 3, 'brick'],
+      [1195, _H-_T*3, 3, 'platform'],
       // Sec 3
-      [1495, _H-_T*5, 2, 'platform'],
-      [1615, _H-_T*9, 2, 'platform'],
-      [1740, _H-_T*6, 2, 'brick'],
-      [1856, _H-_T*4, 2, 'platform'],
+      [1495, _H-_T*5, 3, 'platform'],
+      [1615, _H-_T*9, 3, 'platform'],
+      [1740, _H-_T*6, 3, 'brick'],
+      [1856, _H-_T*4, 3, 'platform'],
       // Sec 4
-      [2112, _H-_T*5, 2, 'platform'],
-      [2240, _H-_T*8, 2, 'platform'],
-      [2368, _H-_T*10, 2, 'brick'],
-      [2496, _H-_T*6, 2, 'platform'],  // stepping stone over gap 4
+      [2112, _H-_T*5, 3, 'platform'],
+      [2240, _H-_T*8, 3, 'platform'],
+      [2368, _H-_T*10, 3, 'brick'],
+      [2496, _H-_T*6, 3, 'platform'],  // stepping stone over gap 4
       // Sec 5
-      [2752, _H-_T*5, 2, 'platform'],
-      [2880, _H-_T*8, 2, 'brick'],
-      [3000, _H-_T*5, 2, 'platform'],
+      [2752, _H-_T*5, 3, 'platform'],
+      [2880, _H-_T*8, 3, 'brick'],
+      [3000, _H-_T*5, 3, 'platform'],
     ],
 
     enemies: [
