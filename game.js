@@ -60,7 +60,7 @@ const LEVEL_CONFIGS = [
   // ══════════════════════════════════════════════════════════
   {
     startBg:   { key: 'washing-machine', srcW: 768,  srcH: 715,  displayH: 256 },
-    endObj:    { key: 'train',           srcW: 1024, srcH: 850,  displayH: 192, flipX: true, angle: -12 },
+    endObj:    { key: 'train',           srcW: 1024, srcH: 850,  displayH: 192, flipX: true, angle: -20 },
     unlockMsg: 'Path unlocked!',
 
     gaps: [
@@ -125,7 +125,7 @@ const LEVEL_CONFIGS = [
   //  Wider gaps, narrower platforms, more enemies
   // ══════════════════════════════════════════════════════════
   {
-    startBg:   { key: 'train', srcW: 1024, srcH: 850,  displayH: 192, angle: -12 },
+    startBg:   { key: 'train', srcW: 1024, srcH: 850,  displayH: 192, angle: -26 },
     endObj:    { key: 'exit',  srcW: 634,  srcH: 903,  displayH: 256 },
     unlockMsg: 'Path unlocked!',
 
